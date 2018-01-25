@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=Sort
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Sort\ here.\r\n\r\n\ @author\ Danny\ Heu\r\n\ @version\ 1.25.2018\r\n
+comment1.params=
+comment1.target=void\ bubbleSort()
+comment2.params=
+comment2.target=void\ insertSort()
+comment3.params=
+comment3.target=void\ selectSort()
+comment4.params=
+comment4.target=Sort()
+numComments=5
