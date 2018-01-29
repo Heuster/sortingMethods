@@ -7,11 +7,10 @@
  */
 public class Sort
 {
-    int [] num = {7,5,1,2,4,8};
-    
+    int [] num = {7,5,10,2,4,8};
+    boolean check = false;
     
     public void bubbleSort(){
-        
         for (int i = 0; i < num.length-1; i++){
             if (num[i] > num[i+1]){
                 int temp = num[i];
@@ -23,23 +22,48 @@ public class Sort
     }
     
     public void insertSort(){
-        
+        for (int i = 1; i < num.length-1; i++){
+            for (int index = i-1; index >= 0; index--){
+                if (num[index] > num[i]){
+                    int temp = num[index];
+                    num[index] = num[i];
+                    num[i] = temp;
+                }
+            }
+        }
     }
     
     public void selectSort(){
-        
+        for (int i = 1; i < num.length-1; i++){
+            for (int index = i-1; index >= 0; index--){
+                if (num[index] > num[i]){
+                    int temp = num[index];
+                    num[index] = num[i];
+                    num[i] = temp;
+                }
+            }
+        }
+    }
+    
+    public boolean checkList(){
+        check = true;
+        for (int i = 0; i < num.length-1; i++){
+            if (num[i] >= num[i+1]){
+                check = false;
+            }
+    
+        }
+        return check;
     }
     
     public Sort(){
-        boolean check = false;
         while (check == false){
             bubbleSort();
-            for (int x = 0; x < num.length-1 ;x++){
-                if (num[x] <= num[x+1]){
-                    check = true;
-                }
+            insertSort();
+            //selectSort();
+            if (checkList()){
+                check = true;
             }
-            
         }
         
     }
