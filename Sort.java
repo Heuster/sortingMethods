@@ -34,15 +34,24 @@ public class Sort
     }
     
     public void selectSort(){
-        for (int i = 1; i < num.length-1; i++){
-            for (int index = i-1; index >= 0; index--){
-                if (num[index] > num[i]){
-                    int temp = num[index];
-                    num[index] = num[i];
-                    num[i] = temp;
+        for (int min = 0; min < num.length-1; min++){
+            int minIdx = min;
+            for (int index = min+1; index < num.length; index++){
+                if (num[index] < num[minIdx]){
+                    minIdx = index;
+                    int temp = num[minIdx];
+                    num[minIdx] = num[min];
+                    num[min] = temp;
                 }
             }
         }
+    }
+    
+    public void printArray(){
+        for (int i = 0; i < num.length; i++){
+            System.out.print(num[i]+ " ");
+        }
+        System.out.println();
     }
     
     public boolean checkList(){
@@ -60,7 +69,7 @@ public class Sort
         while (check == false){
             bubbleSort();
             insertSort();
-            //selectSort();
+            selectSort();
             if (checkList()){
                 check = true;
             }
