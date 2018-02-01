@@ -17,7 +17,6 @@ public class Sort
                 num[i] = num[i+1];
                 num[i+1] = temp;
             }
-            
         }
     }
     
@@ -34,13 +33,14 @@ public class Sort
     }
     
     public void selectSort(){
-        for (int i = 1; i < num.length-1; i++){
-            for (int index = i-1; index >= 0; index--){
-                if (num[index] > num[i]){
-                    int temp = num[index];
-                    num[index] = num[i];
-                    num[i] = temp;
+        for (int i = 0; i < num.length-1; i++){
+            for (int index = 1; index < num.length-1; index++){
+                if (num[index] < num[i]){
+                    int minIdx = num[i];
+                    num[index] = num[i+1];
+     
                 }
+                
             }
         }
     }
@@ -60,7 +60,7 @@ public class Sort
         while (check == false){
             bubbleSort();
             insertSort();
-            //selectSort();
+            selectSort();
             if (checkList()){
                 check = true;
             }
