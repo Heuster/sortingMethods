@@ -33,14 +33,6 @@ public class Sort
     }
     
     public void selectSort(){
-<<<<<<< HEAD
-        for (int i = 0; i < num.length-1; i++){
-            for (int index = 1; index < num.length-1; index++){
-                if (num[index] < num[i]){
-                    int minIdx = num[i];
-                    num[index] = num[i+1];
-     
-=======
         for (int min = 0; min < num.length-1; min++){
             int minIdx = min;
             for (int index = min+1; index < num.length; index++){
@@ -49,7 +41,7 @@ public class Sort
                     int temp = num[minIdx];
                     num[minIdx] = num[min];
                     num[min] = temp;
->>>>>>> 405ce1520c1a15198e374b419ebbae92771eb521
+
                 }
                 
             }
